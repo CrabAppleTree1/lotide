@@ -11,7 +11,7 @@ const eqArrays = function (a1, a2) {
 }
 
 const assertArraysEqual = function (funct, cond) {
-  funct === cond ? console.log('✅ Assertion Passed') : console.log('🛑    Assertion Failed:');
+  eqArrays(funct, cond) ? console.log('✅ Assertion Passed') : console.log('🛑    Assertion Failed:');
 }
 
 assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
