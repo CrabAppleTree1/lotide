@@ -6,15 +6,13 @@ const assertEqual = function (actual, expected) {
 
 
 const eqArrays = function (a1, a2) {
+  condition = true
   for (let i = 0; i < a1.length; i++) {
-    condition = true
+    
     if (a1[i] !== a2[i]) {
       condition = false
       break;
     }
-
-    else
-      condition = true;
   }
   return condition
 }

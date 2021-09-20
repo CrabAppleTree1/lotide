@@ -1,17 +1,10 @@
-const assertObjectEqual = function(object1, object2) {
+const assertObjectEqual = function (object1, object2) {
   const inspect = require('util').inspect;
   if (eqObjects(object1, object2)) {
     console.log(`✅  Assertion passed: ${inspect(object1)} === ${inspect(object2)}`);
   } else {
     console.log(`🛑  Assertion failed: ${inspect(object1)} !== ${inspect(object2)}`);
   }
-};
-
-
-const assertEqual = function (actual, expected) {
-
-  (actual === expected) ? console.log(`✅✅✅ Assertion Passed:   ${actual} === ${expected}`) : console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-
 };
 
 const eqArrays = function (a1, a2) {
@@ -26,9 +19,6 @@ const eqArrays = function (a1, a2) {
   return condition
 }
 
-
-// Returns true if both objects have identical keys with identical values.
-// Otherwise you get back a big fat false!
 const eqObjects = function (object1, object2) {
   const obj1Keys = Object.keys(object1);
   const obj2Keys = Object.keys(object2);
