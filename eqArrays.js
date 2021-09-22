@@ -11,7 +11,7 @@ const eqArrays = function (a1, a2) {
   return condition
 }
 
-module.export = eqArrays;
+module.exports = eqArrays;
 
 
 

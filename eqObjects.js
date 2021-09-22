@@ -1,44 +1,25 @@
-const assertEqual = function (actual, expected) {
-
-  (actual === expected) ? console.log(`✅✅✅ Assertion Passed:   ${actual} === ${expected}`) : console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-
-};
-
-const eqArrays = function (a1, a2) {
-  let condition = true
-  for (let i = 0; i < a1.length; i++) {
-
-    if (a1[i] !== a2[i]) {
-      condition = false
-      break;
-    }
-  }
-  return condition
-}
+const assertEqual = require('./assertEqual');
+const eqArrays = require('./eqArrays');
 
 
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
-const eqObjects = function (object1, object2) {
-  const obj1Keys = Object.keys(object1);
-  const obj2Keys = Object.keys(object2);
-
-
-  if (obj1Keys.length !== obj2Keys.length) {
-    return false;
-  }
-  for (const key of obj1Keys) {
-    const objValue1 = object1[key];
-    const objValue2 = object2[key];
-    if (Array.isArray(objValue1) && Array.isArray(objValue2)) {
-      if (!eqArrays(objValue1, objValue2)) {
-        return false;
-      }
-    } else if (objValue1 !== objValue2) {
+const eqObjects = function(object1, object2) {
+ 
+  if (Object.keys(object1).length !== Object.keys(object2).length)
+  return false;
+ 
+    for (let key of Object.keys(object1)) {
+     if (object1[key].length !== object2[key].length)
       return false;
+      // console.log(Object.values(object1).length + Object.values(object2).length)
+      if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
+        if (!eqArrays(object1[key],object2[key]))
+          return false;
+      } else if (object1[key] !== object2[key])
+        return false;
     }
-  }
-
+  
   return true;
 };
 
