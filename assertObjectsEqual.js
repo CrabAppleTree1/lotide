@@ -7,17 +7,7 @@ const assertObjectEqual = function (object1, object2) {
   }
 };
 
-const eqArrays = function (a1, a2) {
-  let condition = true
-  for (let i = 0; i < a1.length; i++) {
-
-    if (a1[i] !== a2[i]) {
-      condition = false
-      break;
-    }
-  }
-  return condition
-}
+const eqArrays = require('../eqArrays');
 
 const eqObjects = function (object1, object2) {
   const obj1Keys = Object.keys(object1);
