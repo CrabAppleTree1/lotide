@@ -1,7 +1,7 @@
 {
-  "name": "test",
+  "name": "@crabappletree2/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Weeks work of intro to JavaScript as led by Lighthouse-Labs",
   "main": "headTest.js",
   "dependencies": {
     "ansi-colors": "^4.1.1",
@@ -95,6 +95,6 @@
   "scripts": {
     "test": "mocha  './*.js'"
   },
-  "author": "",
+  "author": "H. E.",
   "license": "ISC"
 }
